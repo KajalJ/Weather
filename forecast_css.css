@@ -1,0 +1,38 @@
+	div {
+		padding: 10px;
+	}
+
+	.temp-label {
+		font-weight:bold;
+	}
+
+	.forecast-border {
+		border: 5px solid #00ffff;
+		border-collapse: collapse;
+	}
+
+	.forecast-padding {
+		padding:10px;
+/*		display: flex;
+		flex: 1 1 auto;
+
+		div {
+			;
+		}*/
+	}
+
+	.forecast-flex {
+		display: flex;
+	}
+	.forecast-child {
+		flex: 1 1 auto;
+	}
+	.update {
+		font-weight: bold;
+		margin:10px;
+	}
+	#title-bar {
+		font-weight: bold;
+		font-size: 16px;
+	}
+

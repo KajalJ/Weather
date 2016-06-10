@@ -1,0 +1,60 @@
+<html ng-app="Weather">
+	<head>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <script type="text/javascript" src="https://code.angularjs.org/1.5.6/angular.min.js"></script>
+		<script src="demo.js"></script>
+		<link rel="stylesheet" type="text/css" href="forecast_css.css">
+	</head>
+	<body ng-controller="ForecastController as forecaster">
+    
+		<div>{{"Weather Girls"}}</div>
+		<div id="title-bar" class="forecast-flex">
+			<div class="forecast-child">Kajal</div>
+			<div class="forecast-child">Location</div>
+		</div>
+        
+        
+		<div>
+            <div ng-repeat="day in forecaster.days">
+                <div class="forecast-border forecast-padding forecast-flex">
+                    <div class="temp-label forecast-child ">{{day.name}}</div>
+                    <div class="forecast-child">{{day.temp}}</div>
+                    <img ng-show="day.isSunny && !day.isRainy" ng-src="{{day.images[0]}}" style="width:120px;height:120px"/>
+                    <img ng-show="!day.isSunny && day.isRainy" ng-src="{{day.images[1]}}" style="width:120px;height:120px"/>
+                    <img ng-show="!day.isSunny && !day.isRainy" ng-src="{{day.images[2]}}" style="width:120px;height:120px"/>
+                    <img ng-show="day.isSunny && day.isRainy" ng-src="{{day.images[2]}}" style="width:120px;height:120px"/>
+                    
+                    
+                </div>
+            </div>
+            
+			<!--<div class="forecast-border forecast-padding forecast-flex">
+				<div class="temp-label forecast-child ">Tuesday</div>
+				<div class="forecast-child">32 degrees</div>
+			</div>
+			<div class="forecast-border forecast-padding forecast-flex">
+				<div class="temp-label forecast-child ">Wednesday</div>
+				<div class="forecast-child">44 degrees</div>
+			</div>
+			<div class="forecast-border forecast-padding forecast-flex">
+				<div class="temp-label forecast-child ">Thursday</div>
+				<div class="forecast-child">45 degrees</div>
+			</div>
+			<div class="forecast-border forecast-padding forecast-flex">
+				<div class="temp-label forecast-child ">Friday</div>
+				<div class="forecast-child">46 degrees</div>
+			</div>
+			<div class="forecast-border forecast-padding forecast-flex">
+				<div class="temp-label forecast-child ">Saturday</div>
+				<div class="forecast-child">47 degrees</div>
+			</div>
+			<div class="forecast-border forecast-padding forecast-flex">
+				<div class="temp-label forecast-child ">Sunday</div>
+				<div class="forecast-child">22 degrees</div>
+			</div> -->
+			<button class="forecast-padding update"ng-click="forecaster.update()">Update Forecast!</button>
+		</div> 
+
+	</body>
+  
+</html>
